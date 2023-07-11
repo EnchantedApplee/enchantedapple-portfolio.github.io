@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - EnchantedApple | Gallery</title>
+    <link rel="stylesheet" href="galleryvids.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Video Gallery</h1>
+
+        <div class="video-container">
+            <div class="video"><video src="Random Kits.mp4" muted controls></video></div>
+            <div class="video"><video src="Resetmap.mp4" muted controls></video></div>
+            <div class="video"><video src="Utilities Testing.mp4" muted controls></video></div>
+        </div>
+
+        <div class="popup-video">
+            <span>&times;</span>
+            <video src="Random Kits.mp4" muted autoplay controls></video>
+        </div>
+    </div>
+
+    <script>
+
+        document.querySelectorAll('.video-container video').forEach(vid => {
+            vid.onclick = () => {
+                document.querySelector('.popup-video').style.display = 'block';
+                document.querySelector('.popup-video video').src = vid.getAttribute('src')
+            }
+        });
+
+        document.querySelector('.popup-video span').onclick = () => {
+            document.querySelector('.popup-video').style.display = 'none';
+        }
+ 
+    </script>
+
+</body>
+
+</html>

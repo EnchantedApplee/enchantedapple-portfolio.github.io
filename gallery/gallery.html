@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - EnchantedApple | Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>image gallery</h1>
+        <div class="image-container">
+            <div class="image"><img src="img1.png" alt=""></div>
+            <div class="image"><img src="img2.png" alt=""></div>
+            <div class="image"><img src="img3.png" alt=""></div>
+        </div>
+
+        <div class="popup-image">
+            <span>&times;</span>
+            <img src="img1.png" alt="">
+        </div>
+
+    </div>
+        
+    <script>
+
+        document.querySelectorAll('.image-container img').forEach(image => {
+            image.onclick = () => {
+                document.querySelector('.popup-image').style.display = 'block';
+                document.querySelector('.popup-image img').src = image.getAttribute('src')
+            }
+        });
+
+        document.querySelector('.popup-image span').onclick = () => {
+            document.querySelector('.popup-image').style.display = 'none';
+        }
+ 
+    </script>
+
+</body>
+</html>
